@@ -9,6 +9,13 @@ from __future__ import print_function
 
 from os import makedirs
 from os.path import exists, join
+import os
+# wxf
+os.environ['TF_CPP_MIN_VLOG_LEVEL'] = '3'
+# tensorflow/core/util/dump_graph.cc:87 dump after optimization_registry, location
+os.environ['TF_DUMP_GRAPH_PREFIX'] = '/tmp/log/dump_graph'
+#~wxf
+
 
 import keras
 from keras.callbacks import TensorBoard
@@ -21,8 +28,10 @@ from keras import backend as K
 import numpy as np
 
 batch_size = 128
+#batch_size = 100
 num_classes = 10
-epochs = 12
+#epochs = 12
+epochs = 2
 log_dir = './logs'
 
 if not exists(log_dir):

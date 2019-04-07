@@ -22,3 +22,6 @@ examples/img/*
 # developer environments
 .idea
 .vscode
+
+# log files from example code 
+examples/logs/*
